@@ -7,7 +7,7 @@ const Footer = () => {
 
                 {/* Left Column: CTA */}
                 <div className="max-w-2xl">
-                    <h2 className="text-4xl md:text-6xl font-medium leading-[1.1] mb-12 text-nawasena-cream">
+                    <h2 className="text-2xl md:text-5xl font-medium leading-[1.1] mb-12 text-nawasena-cream">
                         Turning waste into value. Restoring  land. Building resilient food system.
                     </h2>
                     <button className="bg-nawasena-lime text-nawasena-brown px-8 py-4 rounded-full text-lg font-medium hover:scale-105 transition-transform">
@@ -19,8 +19,8 @@ const Footer = () => {
                 <div className="flex flex-col md:w-1/3 gap-12 text-nawasena-cream/60">
                     <div className="flex flex-col gap-4">
                         <a href="#" className="text-nawasena-cream hover:text-nawasena-lime transition-colors">Home</a>
-                        <a href="#" className="hover:text-nawasena-cream transition-colors">Innovation</a>
-                        <a href="#" className="hover:text-white transition-colors">Advisory</a>
+                        <a href="#innovation" className="hover:text-nawasena-cream transition-colors">Innovation</a>
+                        <a href="#advisory" className="hover:text-white transition-colors">Advisory</a>
                         <a href="#" className="hover:text-white transition-colors">About</a>
                         <a href="#" className="hover:text-white transition-colors">Contact</a>
                     </div>

@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Manrope', 'sans-serif'],
+        sans: ['Arial', 'sans-serif'],
+        serif: ['Georgia', 'serif'],
+        display: ['Georgia', 'serif'],
       },
       colors: {
         'nawasena-brown': '#4D2F25',

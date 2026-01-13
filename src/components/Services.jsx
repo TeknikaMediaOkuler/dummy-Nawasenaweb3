@@ -77,7 +77,7 @@ const Services = () => {
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                     className="overflow-hidden"
                                 >
-                                    <div className="pb-12 pl-0 md:pl-4 max-w-2xl text-lg md:text-xl leading-relaxed opacity-80">
+                                    <div className="pb-12 pl-0 md:pl-4 w-full text-lg md:text-xl leading-relaxed opacity-80">
                                         {Array.isArray(service.description) ? (
                                             <ul className="list-disc pl-5 space-y-2">
                                                 {service.description.map((point, i) => (
