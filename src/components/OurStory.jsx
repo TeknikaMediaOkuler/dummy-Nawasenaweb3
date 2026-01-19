@@ -7,8 +7,24 @@ import PrabhaImage from '../assets/Images/Foto Prabha.jpeg';
 
 const TeamMember = ({ name, title, image, link }) => (
     <div className="group cursor-default">
-        <a href={link} target="_blank" rel="noopener noreferrer" className="block relative">
-            <div className="aspect-[4/3] bg-zinc-100 mb-6 overflow-hidden rounded-2xl border border-black/5 relative">
+        {link ? (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="block relative">
+                <TeamMemberImage image={image} name={name} />
+            </a>
+        ) : (
+            <div className="relative">
+                <TeamMemberImage image={image} name={name} />
+            </div>
+        )}
+        <h3 className="text-xl font-medium min-h-[1.75rem]">{name}</h3>
+        <p className="text-zinc-500 mt-1">{title}</p>
+    </div>
+);
+
+const TeamMemberImage = ({ image, name }) => (
+    <div className="aspect-[4/3] bg-zinc-100 mb-6 overflow-hidden rounded-2xl border border-black/5 relative flex items-center justify-center">
+        {image ? (
+            <>
                 <img
                     src={image}
                     alt={name}
@@ -17,10 +33,12 @@ const TeamMember = ({ name, title, image, link }) => (
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ArrowUpRight className="w-5 h-5" />
                 </div>
+            </>
+        ) : (
+            <div className="text-zinc-300">
+                <ArrowUpRight className="w-12 h-12 opacity-50" />
             </div>
-        </a>
-        <h3 className="text-xl font-medium">{name}</h3>
-        <p className="text-zinc-500 mt-1">{title}</p>
+        )}
     </div>
 );
 
@@ -118,6 +136,11 @@ const OurStory = () => {
                                             title="Agronomist"
                                             image={PrabhaImage}
                                             link="https://www.linkedin.com/in/prabhaswara0/?originalSubdomain=id"
+                                        />
+                                        <TeamMember
+                                            name=""
+                                            title="Community Manager"
+                                            image={null}
                                         />
                                     </div>
                                 </div>

@@ -26,8 +26,8 @@ const Footer = () => {
                     </div>
 
                     <div className="flex flex-col gap-4">
-                        <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-                        <a href="#" className="hover:text-white transition-colors">Instagram</a>
+                        <a href="https://www.linkedin.com/company/nawasena-earth/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+                        <a href="https://www.instagram.com/nawasena.earth?igsh=MTI3eG5qNTJsaHo0aQ==" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
                     </div>
 
                     <div className="mt-12 text-sm max-w-xs">
