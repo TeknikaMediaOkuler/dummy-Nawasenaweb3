@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MoveRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import ArabicaImage from '../assets/Images/Pilot Sites Arabica.jpg';
+import RobustaImage from '../assets/Images/Pilot Sites at Robusta.JPG';
+import InvestmentImage from '../assets/Images/Investment Readiness.jpg';
+import EngineeringImage from '../assets/Images/Organic Fertilizer Website Asset.png';
 
 const services = [
     {
         title: "Technology Innovation",
-        description: [
-            "Proprietary pyrolysis units designed for smallholder use and small-business use",
-            "Converts coffee husks, rice husks, pruned branches, and palm oil waste into premium biochar.",
-            "Equipment produces biochar that meets IBI international quality standards.",
-            "Farmer-friendly design with built-in training and technical support."
+        intro: "We design proprietary equipment and process to produce high-quality agricultural inputs that meet rigorous international standards.",
+        points: [
+            "Custom formulation driven by soil and crop analysis for optimal results.",
+            "Our flagship Mobile Pyrolysis Units (MPU) bring industrial-grade processing directly to the source (multi-feedstock capability), featuring an intuitive design and comprehensive technical support."
         ],
         tags: ["Biochar", "Pyrolysis", "Agri-tech"]
     },
     {
         title: "Strategic Advisory",
-        description: [
-            "Climate and waste management strategy for agricultural value chains.",
+        intro: "We provide strategic climate and waste management advisory for stakeholders in the agriculture value chain seeking to integrate sustainable business practices and enhance brand value.",
+        points: [
+            "Comprehensive waste management and climate strategy development.",
             "Investment readiness support for sustainable agriculture ventures.",
-            "Facility design for organic fertilizer and biochar production.",
-            "Carbon and regenerative agriculture positioning for brands."
+            "Facility design for industrial-scale organic inputs (up to 25 tons/day).",
+            "Carbon positioning and regenerative agriculture market strategy.",
+            "Soil testing, quality certification, and data-driven recommendations."
         ],
         tags: ["Workshops", "Team Building"]
     },
@@ -27,22 +32,28 @@ const services = [
 
 const Services = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [currentClient, setCurrentClient] = useState(0);
-
-    const clients = [
-        { name: "Impact Hub", image: "https://placehold.co/400x300/f3f4f6/1f2937?text=Impact+Hub" },
-        { name: "Octant", image: "https://placehold.co/400x300/f3f4f6/1f2937?text=Octant" },
-        { name: "WWF", image: "https://placehold.co/400x300/f3f4f6/1f2937?text=WWF" },
-        { name: "ENS", image: "https://placehold.co/400x300/f3f4f6/1f2937?text=ENS" },
+    const featuredWork = [
+        {
+            title: "Box 1",
+            content: "Pilot sites at Arabica Coffee Farm in Buleleng with Adena Coffee.",
+            image: ArabicaImage
+        },
+        {
+            title: "Box 2",
+            content: "Pilot sites at Robusta Coffee Farm with Farmer Coops.",
+            image: RobustaImage
+        },
+        {
+            title: "Box 3",
+            content: "Investment Readiness: Waste and Climate Strategy for a Local Coffee Brand",
+            image: InvestmentImage
+        },
+        {
+            title: "Box 4",
+            content: "Basic engineering design for organic fertilizer facility",
+            image: EngineeringImage
+        }
     ];
-
-    const nextClient = () => {
-        setCurrentClient((prev) => (prev + 1) % clients.length);
-    };
-
-    const prevClient = () => {
-        setCurrentClient((prev) => (prev - 1 + clients.length) % clients.length);
-    };
 
     return (
         <section className="py-24 px-6 md:px-12 max-w-[1400px] mx-auto">
@@ -78,16 +89,13 @@ const Services = () => {
                                     className="overflow-hidden"
                                 >
                                     <div className="pb-12 pl-0 md:pl-4 w-full text-lg md:text-xl leading-relaxed opacity-80">
-                                        {Array.isArray(service.description) ? (
-                                            <ul className="list-disc pl-5 space-y-2">
-                                                {service.description.map((point, i) => (
-                                                    <li key={i}>{point}</li>
-                                                ))}
-                                            </ul>
-                                        ) : (
-                                            <p>{service.description}</p>
-                                        )}
-                                        <div className="mt-6 flex gap-3">
+                                        <p className="mb-6 text-2xl">{service.intro}</p>
+                                        <ul className="list-disc pl-5 space-y-2">
+                                            {service.points.map((point, i) => (
+                                                <li key={i}>{point}</li>
+                                            ))}
+                                        </ul>
+                                        <div className="mt-6 flex gap-3 opacity-0 hidden">
                                             {service.tags.map(tag => (
                                                 <span key={tag} className="text-xs border border-nawasena-brown/20 px-3 py-1 rounded-full uppercase tracking-wider">{tag}</span>
                                             ))}
@@ -100,50 +108,26 @@ const Services = () => {
                 ))}
             </div>
 
-            {/* Where we've worked Client Carousel */}
+            {/* Featured Work Grid */}
             <div className="mt-32">
-                <h2 className="text-sm font-medium uppercase tracking-wide opacity-50 mb-12">Where we've worked</h2>
+                <h2 className="text-sm font-medium uppercase tracking-wide opacity-50 mb-12">Featured Work</h2>
 
-                {/* Desktop View: Grid (No buttons) */}
-                <div className="hidden md:grid grid-cols-4 gap-8">
-                    {clients.map((client, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {featuredWork.map((work, index) => (
                         <div key={index} className="group cursor-default">
-                            <div className="aspect-[4/3] bg-zinc-100 mb-6 overflow-hidden rounded-lg border border-black/5">
-                                <img src={client.image} alt={client.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" />
+                            <div className="aspect-[4/3] bg-zinc-100 mb-6 rounded-lg border border-black/5 overflow-hidden">
+                                <img
+                                    src={work.image}
+                                    alt={work.title}
+                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                                />
                             </div>
-                            <h3 className="text-xl font-medium text-center md:text-left opacity-80 group-hover:opacity-100 transition-opacity">{client.name}</h3>
+                            {/* <h3 className="text-lg font-medium text-nawasena-brown mb-4">{work.title}</h3> */}
+                            <p className="text-lg leading-relaxed opacity-80 text-center">
+                                {work.content}
+                            </p>
                         </div>
                     ))}
-                </div>
-
-                {/* Mobile View: Carousel (With buttons) */}
-                <div className="md:hidden relative px-4">
-                    <div className="overflow-hidden">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={currentClient}
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -20 }}
-                                transition={{ duration: 0.3 }}
-                                className="group"
-                            >
-                                <div className="aspect-[4/3] bg-zinc-100 mb-6 overflow-hidden rounded-lg border border-black/5">
-                                    <img src={clients[currentClient].image} alt={clients[currentClient].name} className="w-full h-full object-cover grayscale-0" />
-                                </div>
-                                <h3 className="text-xl font-medium text-center">{clients[currentClient].name}</h3>
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
-
-                    <div className="flex justify-center gap-6 mt-8">
-                        <button onClick={prevClient} className="p-3 border border-black/10 rounded-full hover:bg-black hover:text-white transition-colors active:scale-95">
-                            <ChevronLeft className="w-5 h-5" />
-                        </button>
-                        <button onClick={nextClient} className="p-3 border border-black/10 rounded-full hover:bg-black hover:text-white transition-colors active:scale-95">
-                            <ChevronRight className="w-5 h-5" />
-                        </button>
-                    </div>
                 </div>
             </div>
         </section>

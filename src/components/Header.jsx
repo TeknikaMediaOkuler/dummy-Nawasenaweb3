@@ -19,13 +19,13 @@ const Header = () => {
 
             {/* Center: Desktop Nav */}
             <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center gap-8">
-                <a href="#innovation" className="text-sm font-bold hover:opacity-70 transition-opacity">Innovation</a>
-                <a href="#advisory" className="text-sm font-bold hover:opacity-70 transition-opacity">Advisory</a>
+                <a href="#innovation" className="text-sm font-bold hover:opacity-70 transition-opacity font-serif">Innovation</a>
+                <a href="#advisory" className="text-sm font-bold hover:opacity-70 transition-opacity font-serif">Advisory</a>
             </nav>
 
             {/* Right Side: CTA */}
             <div className="flex items-center justify-end">
-                <a href="#contact" className="text-sm font-bold bg-nawasena-brown text-nawasena-cream px-6 py-2.5 rounded-full hover:bg-nawasena-brown/90 transition-colors">
+                <a href="#contact" className="text-sm font-bold bg-nawasena-brown text-nawasena-cream px-6 py-2.5 rounded-full hover:bg-nawasena-brown/90 transition-colors font-serif">
                     Get in touch
                 </a>
             </div>

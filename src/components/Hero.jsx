@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import HeroImage from '../assets/Images/Hero.jpg';
 
 const Hero = () => {
     return (
@@ -43,14 +44,14 @@ const Hero = () => {
                 transition={{ delay: 0.4, duration: 1 }}
                 className="mt-16 w-full h-[60vh] rounded-2xl overflow-hidden relative"
             >
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-80 mix-blend-multiply filter blur-3xl scale-125 animate-pulse-slow"></div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-overlay"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-80 mix-blend-multiply filter blur-3xl scale-125 animate-pulse-slow"></div> */}
+                {/* <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-overlay"></div> */}
                 <img
-                    src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
-                    alt="Abstract Gradient"
-                    className="w-full h-full object-cover mix-blend-overlay opacity-60"
+                    src={HeroImage}
+                    alt="Organic Fertilizer"
+                    className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/40 via-red-400/40 to-yellow-400/40 mix-blend-screen" />
+                {/* <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/40 via-red-400/40 to-yellow-400/40 mix-blend-screen" /> */}
             </motion.div>
         </section>
     );

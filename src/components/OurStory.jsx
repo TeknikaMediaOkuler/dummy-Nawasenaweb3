@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import LibbisImage from '../assets/Images/Foto Libbis.jpeg';
+import MaulanaImage from '../assets/Images/Foto Maulana.jpg';
+import PrabhaImage from '../assets/Images/Foto Prabha.jpeg';
 
-const TeamMember = ({ name, title, image }) => (
+const TeamMember = ({ name, title, image, link }) => (
     <div className="group cursor-default">
-        <div className="aspect-[4/3] bg-zinc-100 mb-6 overflow-hidden rounded-2xl border border-black/5 relative">
-            <img
-                src={image}
-                alt={name}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
-            />
-            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <ArrowUpRight className="w-5 h-5" />
+        <a href={link} target="_blank" rel="noopener noreferrer" className="block relative">
+            <div className="aspect-[4/3] bg-zinc-100 mb-6 overflow-hidden rounded-2xl border border-black/5 relative">
+                <img
+                    src={image}
+                    alt={name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ArrowUpRight className="w-5 h-5" />
+                </div>
             </div>
-        </div>
+        </a>
         <h3 className="text-xl font-medium">{name}</h3>
         <p className="text-zinc-500 mt-1">{title}</p>
     </div>
@@ -47,7 +52,7 @@ const OurStory = () => {
                     <span className="text-sm font-medium uppercase tracking-wide opacity-50 block sticky top-32">Our Story</span>
                 </div>
                 <div className="md:col-span-9 max-w-4xl">
-                    <p className="text-xl md:text-3xl font-medium leading-[1.4] md:leading-[1.4] text-nawasena-brown mb-8">
+                    <p className="text-2xl font-medium leading-[1.4] md:leading-[1.4] text-nawasena-brown mb-8">
                         Founded in 2024, we help small and medium businesses transition from conventional to regenerative agriculture—restoring soil health, one acre at a time.
                     </p>
 
@@ -89,13 +94,15 @@ const OurStory = () => {
                                     <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
                                         <TeamMember
                                             name="Libbis Sujessy"
-                                            title="Yang Ngatur"
-                                            image="https://placehold.co/600x450/e5e7eb/1f2937?text=CEO"
+                                            title="CEO"
+                                            image={LibbisImage}
+                                            link="https://www.linkedin.com/in/sujessy/?originalSubdomain=id"
                                         />
                                         <TeamMember
-                                            name="Supreme Leader"
-                                            title="Yang Pusing"
-                                            image="https://placehold.co/600x450/e5e7eb/1f2937?text=COO"
+                                            name="Maulana Ahmad"
+                                            title="COO"
+                                            image={MaulanaImage}
+                                            link="https://www.linkedin.com/in/maulana-ahmad-39b854221/?originalSubdomain=id"
                                         />
                                     </div>
                                 </div>
@@ -108,13 +115,9 @@ const OurStory = () => {
                                     <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
                                         <TeamMember
                                             name="Prabha"
-                                            title="Ngurus Tanah"
-                                            image="https://placehold.co/600x450/e5e7eb/1f2937?text=Agronomist"
-                                        />
-                                        <TeamMember
-                                            name="Siapa ini"
-                                            title="Community Manager"
-                                            image="https://placehold.co/600x450/e5e7eb/1f2937?text=Community"
+                                            title="Agronomist"
+                                            image={PrabhaImage}
+                                            link="https://www.linkedin.com/in/prabhaswara0/?originalSubdomain=id"
                                         />
                                     </div>
                                 </div>
